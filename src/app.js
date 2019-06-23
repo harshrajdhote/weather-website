@@ -4,7 +4,7 @@ const hbs  = require('hbs')
 const path = require('path')
 const app = express()
 //nodemon app.js -e js,hbs command to tell nodemon to look for hbs files also
-
+//
 const publicPath = (path.join(__dirname,'../public'))
 const viewpath = path.join(__dirname,'./templates/views')
 const pathpartials = path.join(__dirname,'./templates/partials')
