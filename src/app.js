@@ -4,7 +4,11 @@ const hbs  = require('hbs')
 const path = require('path')
 const app = express()
 //nodemon app.js -e js,hbs command to tell nodemon to look for hbs files also
-//
+//for ssh key generation bash command --> ssh-keygen -t rsa -b 4096 -C "dhoteharshraj@gmail.com"
+//eval $(ssh-agent "-s")
+//ssh-add -k ~/.ssh/id_rsa
+const port = process.env.PORT || 3000
+
 const publicPath = (path.join(__dirname,'../public'))
 const viewpath = path.join(__dirname,'./templates/views')
 const pathpartials = path.join(__dirname,'./templates/partials')
@@ -82,8 +86,8 @@ app.get("*",(req,res)=>{
 
 })
 
-app.listen(3000,()=>{
-    console.log("server has been started")
+app.listen(port,()=>{
+    console.log("server has been started at port no "+port)
 })
  
 
